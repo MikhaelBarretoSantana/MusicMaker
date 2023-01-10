@@ -4,41 +4,77 @@ function convertUrlToString(url) {
     return urlVideoString;
 }
 
-function verificador(link){ 
-    const player = document.getElementById('box')
-        player.src = link;            
-        player.autoplay = true;
-        player.hidden = true;
-}
-
-function url(codigoUrl) {
-    var link = "https://www.youtube.com/embed/" + codigoUrl + "?autoplay=1";
-        verificador(link)
-    }   
-
 function linkarUrl() {
         urlVideo = document.getElementById('url').value;
-        stringUrl = convertUrlToString(urlVideo);
-        if (stringUrl.length == 0) {
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        if (urlVideo.length == 0) {
             alert("Campo Vazio");
         } else {
-            setInterval(url(stringUrl),4000);
-            lista_links.push(urlVideo);
             esconder();
             ativacaoDeTeclas = true;
+            onYouTubeIframeAPIReady(urlVideo)
+            onPlayerReady()
         }
 }
 
-function PauseVideo() {
-    var div = document.getElementById("box");
-    var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
-    func = state == 'pausado' ? 'playVideo' : 'pauseVideo';
-    iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
+function onYouTubeIframeAPIReady(url) {
+    player = new YT.Player('player', {
+        height: '0',
+        width: '0',
+        videoId: convertUrlToString(urlVideo),
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
 }
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+    event.target.hideVideo();
+}
+
+    var done = false;
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+            done = true;
+        } 
+    }
+    function pauseVideo() {
+        if (player.getPlayerState() == 2) {
+            player.playVideo()
+        } else if(player.getPlayerState() == 1 ) {
+            player.pauseVideo();
+        };
+    }
+    function hideVideo(){
+        player.hidden()
+    }
+
+    function stopVideo() {
+        if (player.getPlayerState() == 0) {
+            alert("Não existe Video para ser tocado")
+        } else {
+            player.destroy()
+            const startbotao = document.getElementById('botao-start');
+            startbotao.hidden = false;
+            const botoes = document.getElementById('dj-space-botoes')
+            botoes.hidden = true;
+            const urlLink = document.getElementById('espaco-linkagem');
+            urlLink.hidden = false;
+            
+        }
+    }
+
 
 function esconder(){
     const startbotao = document.getElementById('botao-start');
-    startbotao.hidden = true
+    startbotao.hidden = true;
     const botoes = document.getElementById('dj-space-botoes');
         botoes.hidden = false;
     const urlLink = document.getElementById('espaco-linkagem');
@@ -66,15 +102,6 @@ document.onkeydown = function(event) {
         linkarUrl()
     }
     };
-
-    let lista_links = [];
-    var node = document.createElement('LI');
-    lista_links.forEach(element => {
-        var nodetext = document.createTextNode(element);
-        node.appendChild(nodetext);
-        document.getElementById('lista').appendChild(node);
-        console.log(lista_links)
-    });
 /* em desenvolvimento 
 function launchpad(numero) {
     if (numero == 1) {

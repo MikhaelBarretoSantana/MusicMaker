@@ -205,6 +205,58 @@ body {
     margin-top: 30px;
 }
 
+.botoes-de-midia {
+    display: flex;
+    margin-left: 20px;
+}
+
+.botao-stop {
+    margin-left: 30px;
+
+    background: rgba(140, 140, 140, 0.2);
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+
+
+    cursor: pointer;
+}
+
+.botao-stop:hover {
+    background: linear-gradient(45deg, #edb1f1, #d59bf6, #9896f1, #8ef6e4);
+    border-radius: 10px;
+    background-size: 400%;    
+    animation: glowing 8s linear infinite;
+}
+
+.botao-pause {
+    background:rgba(140, 140, 140, 0.2);
+    border-radius: 10px;
+    background-size: 400%;
+    border: none;
+    padding: 25px;
+
+
+    cursor: pointer;;
+}
+
+.botao-pause:hover {
+    background: linear-gradient(45deg, #3D0423  ,#c51350, #fda403, #e8751a);
+    background-size: 400%;
+    animation: glowing 8s linear infinite;
+    transition: 3s linear;
+    border-radius: 10px;
+}
+
+.botao-pause-imagem {
+    background-color: none;
+    color: #fff;
+
+    font-size: 60px;
+    font-weight: 300;
+    border: none;
+}
+
 .botao-1 {
     padding: 50px;
     margin-right: 15px;
@@ -1026,6 +1078,8 @@ body {
         margin-left: calc(45% - 5rem);
         margin-top: 30px;
     }
+
+
 
     .botao-1 {
         padding: 50px;
