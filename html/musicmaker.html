@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link href="/img/musical-note.png" rel="icon">
+        <link rel="stylesheet" href="\css\musicmaker.css">
+        <meta charset="UTF-8">  
+        <script src="/javascript/musicmaker.js"></script>
+        <title> MusicMaker | Remixando </title>
+    </head>
+    <body>  
+        <header >
+            <div>
+                <video autoplay muted loop poster="/img/milky-way-2695569_960_720.jpg" class="bg_video">
+                    <source src="/video/d5a4b96f-01b4-4519-8470-62484e0b1b5b.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="divisoria-titulo">
+                <h1 class="titulo"><a class="titulo-link" href="/html/main.html"> Music Maker </a></h1>
+            </div>
+        
+        <div id="espaco-linkagem" class="wrapper">
+            <div class="input-url">
+                <input id="url" type="text" class="input-v" required>
+                <div class="underline"></div>
+                <label> URL</label>
+            </div>
+        </div>
+
+        </header>
+        <main>
+            <div id="espaco-linkagem">
+                <div class="espaco-botao">
+                    <button id="botao-start" class="glow-on-hover" onclick="linkarUrl()" type="submit"> Start! </button>
+                </div>
+                    <iframe id="box" width="560" height="315" hidden title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+                </div>
+            <div id="dj-space-botoes" class="dj-space" hidden>
+                <div class="botões de midia">
+                    <button id="botao-pause" class="botao-pause" type="button" onclick="PauseVideo()"> || </button>
+                </div>
+                <div  class="dj-space-botoes" >
+                    <button id="botao-1" class="botao-1" type="button" onclick="botao1()"> <a class="letra-botao1"> A </a></button>
+                    <button class="botao-2" type="button" onclick="botao2()"> <a class="letra-botao2"> S </a></button>
+                    <button class="botao-3" type="button" onclick="botao3()"> <a class="letra-botao3"> D </a></button>
+                    <button class="botao-4" type="button" onclick="botao4()"> <a class="letra-botao4"> W </a></button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div>
+                <ol class="lista" id="lista">
+                </ol>
+            </div>
+        </footer>
+    </body>
+</html>
