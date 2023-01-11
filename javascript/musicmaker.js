@@ -24,8 +24,8 @@ function linkarUrl() {
 
 function onYouTubeIframeAPIReady(url) {
     player = new YT.Player('player', {
-        height: '0',
-        width: '0',
+        height: '100',
+        width: '300',
         videoId: convertUrlToString(urlVideo),
         events: {
             'onReady': onPlayerReady,
@@ -72,14 +72,14 @@ function onPlayerReady(event) {
         }
     }
 
-
 function esconder(){
     const startbotao = document.getElementById('botao-start');
-    startbotao.hidden = true;
+        startbotao.hidden = true;
     const botoes = document.getElementById('dj-space-botoes');
         botoes.hidden = false;
     const urlLink = document.getElementById('espaco-linkagem');
         urlLink.hidden = true;
+    
 }
 
 var ativacaoDeTeclas = false;
@@ -102,24 +102,37 @@ document.onkeydown = function(event) {
     else if (key_press == "Enter" || key_code == 13) {
         linkarUrl()
     }
-    };
-/* em desenvolvimento 
-function launchpad(numero) {
-    if (numero == 1) {
-        let mudancaBotao2 = document.getElementsByClassName("botao-2")
-        let mudancaBotao3 = document.getElementsByClassName("botao-3")
-        let mudancaBotao4 = document.getElementsByClassName("botao-4")
-        mudancaBotao2.style.background = 'background: linear-gradient(45deg, #8a1253,#c51350);';
-        mudancaBotao2.style.transition = '0.3s linear;';
-
+    else if (key_press == "P") {
+        pauseVideo()
     }
-}
-*/
+    else if (key_press == "T") {
+        stopVideo()
+    }
+    };
+    let c = 0;
 
 function botao1() {
     const audio1 = new Audio("/ES_Bass Drop - SFX Producer.mp3");
-    audio1.play();
-    /*launchpad(1)*/
+    audio1.play();}
+    /* var styleElem = document.head.appendChild(document.createElement("style"));
+    if (c >= 1) {
+        document.head.removeChild(document.querySelector('style'));
+        c = 0;
+        console.log(c)
+    }else {
+        setTimeout(styleElem.innerHTML = ".dj-space-botoes::after {content: ''; width: 30px; height: 30px; border-radius: 100%; border: 5px solid #c51350; position: absolute; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: ring 1s infinite;}", 1)
+        c += 1;
+        console.log(c)
+    }}*/
+
+function myfunction() {
+    var new_div = document.createElement("DIV");
+    new_div.innerHTML = "<h2>New div</h2>";
+    new_div.addEventListener("click", function() {
+        this.remove();
+    });
+    document.getElementById("append-div").appendChild(new_div);
+    
 }
 
 function botao2() {

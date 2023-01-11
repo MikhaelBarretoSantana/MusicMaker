@@ -11,6 +11,11 @@ body {
     background-color: #000;
 }
 
+.player {
+    display: inline;
+    margin-left: 25px;
+    margin-top: 50px;
+}
     
 .bg_video{
     position: fixed; 
@@ -118,19 +123,6 @@ body {
     transform: scaleX(1);
 }
 
-@keyframes ring {
-0% {
-    width: 30px;
-    height: 30px;
-    opacity: 1;
-    }
-100% {
-    width: 300px;
-    height: 300px;
-    opacity: 0;
-    }
-}
-
 .espaco-botao {
     display: block;
     padding-left: calc( 85% - 40.5rem);
@@ -193,6 +185,19 @@ body {
     border-radius: 10px;
 }
 
+@keyframes ring {
+    0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    }
+    100% {
+    width: 730px;
+    height: 730px;
+    opacity: 0;
+    }
+}
+
 @keyframes glowing {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
@@ -200,14 +205,15 @@ body {
 }
 
 .dj-space-botoes{
-    display: inline-block;
-    margin-left: 30rem;
-    margin-top: 30px;
+    display: inline;
+    margin-left: 10rem;
+    margin-top: 20px;
 }
 
 .botoes-de-midia {
-    display: flex;
+    display: inline-flex;
     margin-left: 20px;
+    margin-top: 10px;
 }
 
 .botao-stop {
@@ -530,6 +536,18 @@ body {
         margin-top: 30px;
     }
 
+    .player {
+        margin-left: 140px;
+    }
+
+    .botoes-de-midia{
+        padding-left: 140px;
+    }
+
+    .botao-pause {
+        padding: 25px;
+    }
+
     .botao-1 {
         padding: 50px;
         margin-right: 15px;
@@ -800,7 +818,7 @@ body {
 
     .dj-space-botoes{
         display: inline-block;
-        margin-left: calc(28% - 5rem);
+        margin-left: calc(50% - 2rem);
         margin-top: 30px;
     }
 
