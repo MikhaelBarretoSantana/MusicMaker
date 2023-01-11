@@ -61,6 +61,7 @@ function onPlayerReady(event) {
             alert("Não existe Video para ser tocado")
         } else {
             player.destroy()
+            ativacaoDeTeclas = false
             const startbotao = document.getElementById('botao-start');
             startbotao.hidden = false;
             const botoes = document.getElementById('dj-space-botoes')
