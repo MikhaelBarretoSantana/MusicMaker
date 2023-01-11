@@ -22,10 +22,41 @@ function linkarUrl() {
         }
 }
 
+function linkarUrl2() {
+    urlVideo = document.getElementById('url').value;
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    if (urlVideo.length == 0) {
+        alert("Campo Vazio");
+    } else {
+        esconder2();
+        ativacaoDeTeclas = true;
+        onYouTubeIframeAPIReady(urlVideo)
+        onPlayerReady()
+    }
+}
+
 function onYouTubeIframeAPIReady(url) {
     player = new YT.Player('player', {
-        height: '0',
-        width: '0',
+        height: '100',
+        width: '300',
+        videoId: convertUrlToString(urlVideo),
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+
+function onYouTubeIframeAPIReady2(url) {
+    player = new YT.Player('player2', {
+        height: '100',
+        width: '300',
         videoId: convertUrlToString(urlVideo),
         events: {
             'onReady': onPlayerReady,
@@ -73,13 +104,24 @@ function onPlayerReady(event) {
     }
 
 
+function esconder2() {
+    const startbotao2 = document.getElementById('botao-start2');
+        startbotao2.hidden = true;
+    const urlLink2 = document.getElementById('espaco-linkagem2');
+        urlLink2.hidden = true;
+    const botoesDeMidia2 = document.getElementById('botoes-de-midia2')
+        botoesDeMidia2.hidden = false;
+
+}
+
 function esconder(){
     const startbotao = document.getElementById('botao-start');
-    startbotao.hidden = true;
+        startbotao.hidden = true;
     const botoes = document.getElementById('dj-space-botoes');
         botoes.hidden = false;
     const urlLink = document.getElementById('espaco-linkagem');
         urlLink.hidden = true;
+    
 }
 
 var ativacaoDeTeclas = false;
@@ -101,6 +143,12 @@ document.onkeydown = function(event) {
     }
     else if (key_press == "Enter" || key_code == 13) {
         linkarUrl()
+    }
+    else if (key_press == "P") {
+        pauseVideo()
+    }
+    else if (key_press == "T") {
+        stopVideo()
     }
     };
 /* em desenvolvimento 
