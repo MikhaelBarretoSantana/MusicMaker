@@ -22,7 +22,7 @@ function linkarUrl() {
         }
 }
 
-function onYouTubeIframeAPIReady(url) {
+function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '100',
         width: '300',
@@ -36,7 +36,6 @@ function onYouTubeIframeAPIReady(url) {
 
 function onPlayerReady(event) {
     event.target.playVideo();
-    event.target.hideVideo();
 }
 
     var done = false;
@@ -88,69 +87,83 @@ document.onkeydown = function(event) {
     var key_press = String.fromCharCode(event.keyCode);
     var key_code = event.keyCode;
     if (key_press == "A" && ativacaoDeTeclas == true) {
-        botao1()
+        botao1();
     }
     else if (key_press == "S" && ativacaoDeTeclas == true) {
-        botao2()
+        botao2();
     } 
     else if (key_press == "D" && ativacaoDeTeclas == true) {
-        botao3()
+        botao3();
     }
     else if (key_press == "W" && ativacaoDeTeclas == true) {
-        botao4()
+        botao4();
     }
     else if (key_press == "Enter" || key_code == 13) {
-        linkarUrl()
+        linkarUrl();
     }
-    else if (key_press == "P") {
-        pauseVideo()
+    else if (key_press == "Space" || key_code == 32 && ativacaoDeTeclas == true) {
+        pauseVideo();
     }
-    else if (key_press == "T") {
-        stopVideo()
+    else if (key_press == "T" && ativacaoDeTeclas == true) {
+        stopVideo();
     }
     };
-    let c = 0;
+    /*let c = 0;*/
 
-function botao1() {
+function botao1() {        
+    var styleElem = document.createElement("style");
+    styleElem.id = "efeitobotao1"
+    styleElem.innerHTML = "#dj-space-botoes::after {content: ''; width: 40px; height: 40px; border-radius: 100%; border: 5px solid #c51350; position: absolute; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: ring 1s infinite;"
+    document.head.appendChild(styleElem);
+    var elemento = document.getElementById('efeitobotao1')
+
+    const sleep = (duration) => {
+        return new Promise(resolve => setTimeout(resolve, duration));
+    }
+
+    sleep(450).then(() => {
+        while (elemento.firstChild) {
+            elemento.removeChild(elemento.firstChild);
+            elemento.remove();
+        }
+    })  
+
     const audio1 = new Audio("/ES_Bass Drop - SFX Producer.mp3");
-    audio1.play();}
-    /* var styleElem = document.head.appendChild(document.createElement("style"));
-    if (c >= 1) {
-        document.head.removeChild(document.querySelector('style'));
-        c = 0;
-        console.log(c)
-    }else {
-        setTimeout(styleElem.innerHTML = ".dj-space-botoes::after {content: ''; width: 30px; height: 30px; border-radius: 100%; border: 5px solid #c51350; position: absolute; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: ring 1s infinite;}", 1)
-        c += 1;
-        console.log(c)
-    }}*/
-
-function myfunction() {
-    var new_div = document.createElement("DIV");
-    new_div.innerHTML = "<h2>New div</h2>";
-    new_div.addEventListener("click", function() {
-        this.remove();
-    });
-    document.getElementById("append-div").appendChild(new_div);
-    
-}
+    audio1.play();
+    }
 
 function botao2() {
+    /*var styleElem2 = document.createElement("style");
+    styleElem2.id = "efeitobotao2";
+    styleElem2.innerHTML = '#botao-2: {box-shadow: 0px 0px 10px rgba(213,91,62,25);}';
+    console.log(styleElem2)
+    console.log(styleElem2.id)
+    document.head.appendChild(styleElem2);
+    var elemento2 = document.getElementById('efeitobotao2');
+
+    const sleep = (duration) => {
+        return new Promise(resolve => setTimeout(resolve, duration));
+    }
+
+    sleep(1050).then(() => {
+        while (elemento2.firstChild) {
+            elemento2.removeChild(elemento2.firstChild);
+            elemento2.remove();
+        }
+    })*/
+
     const audio2 = new Audio("/ES_Drum Hit High Hat 1 - SFX Producer.mp3")
     audio2.play()
-    /*launchpad(2)*/
 }
 
 function botao3() {
     const audio3 = new Audio("/ES_PREL Hit Digital 18 - SFX Producer.mp3")
 
     audio3.play()
-    /*launchpad(3)*/
 }
 
 function botao4() {
     const audio4 = new Audio("/ES_Hand Clap Indoors 3 - SFX Producer.mp3")
 
     audio4.play()
-    /*launchpad(4)*/
 }

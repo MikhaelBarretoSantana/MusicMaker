@@ -293,6 +293,8 @@ body {
 .botao-1:hover {
     background: linear-gradient(45deg, #fda403, #e8751a);
     transition: 0.3s linear;
+    box-shadow: 0px 0px 25px rgba(197,19,80,25);
+    animation: piscar 0.5s;
 }
 
 .botao-2 {
@@ -308,8 +310,20 @@ body {
 
 .botao-2:hover {
     background: linear-gradient(45deg, #d55b3e, #fcf4d9);
-    transition: 0.3s linear;
+    box-shadow: 0px 0px 25px rgba(0,170,160,25);
+    animation: piscar 0.5s;
+    transition: 0.1s linear;
 }
+
+@keyframes piscar {
+    0% {
+        box-shadow: none
+    }
+    100% {
+        box-shadow: inset;
+    }
+}
+
 
 .botao-3 {
     padding: 50px;
@@ -324,6 +338,9 @@ body {
 .botao-3:hover {
     background: linear-gradient(45deg, #82acff, #8bffff);
     transition: 0.3s linear;
+    box-shadow: 0px 0px 25px rgba(143,113,255,25);
+    animation: piscar 0.5s ;
+    transition: 0.1s linear;
 }
 
 .botao-4 {
@@ -340,6 +357,9 @@ body {
 .botao-4:hover {
     background: linear-gradient(45deg, #5b446a, #906387);
     transition: 0.3s linear;
+    
+    box-shadow: 0px 0px 25px rgba(125,216,125,25);
+    animation: piscar 0.5s ;
 }
 
 @media screen and (max-width: 599px) {    
@@ -744,6 +764,7 @@ body {
     100% {
         width: 300px;
         height: 300px;
+        position: relative;
         opacity: 0;
         }
     }
