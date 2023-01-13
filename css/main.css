@@ -131,16 +131,19 @@ table {
 
 .texto-estilizacao {
     margin-top: 22rem;
+    margin-left: calc(49rem - 10%);
     font-size: 50px;
     font-weight: 500px;
     color: #fff;
-    cursor: pointer;
-
+    cursor: default;
     display: block;
     text-align: center;
+    border-radius: 5px;
 
     outline: none;
     position: relative; 
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-flex;
 }
 
 
@@ -157,6 +160,36 @@ table {
     animation: ring 1s infinite;
 }
 
+.texto-estilizacao:hover {
+    box-shadow: 0px 0px 25px rgba(152,150,241,95);
+    border-radius: 10px;
+    transition: 2s linear;
+    animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+    0% {
+        box-shadow: inset;
+    }
+    50% {
+        box-shadow: 0px 0px 15px inherit;
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+.texto-estilizado {
+    display: inline;
+    
+    background-size: 200%;
+    background-image: linear-gradient(45deg, rebeccapurple, steelblue, turquoise, #BFBFBF);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    animation: glowing 12s linear infinite;
+    color: black;
+}
 
 @keyframes ring {
     0% {
@@ -171,11 +204,6 @@ table {
     }
 }
 
-
-.texto-estilizacao :hover {
-    color: #6F85ED;
-    transition: 0.2s linear;
-}
 
 .footer {
     font-size: 30px;
@@ -352,17 +380,19 @@ li {
 
 
     .texto-estilizacao {
-        margin-top: 12rem;
+        margin-top: 22rem;
+        margin-left: calc(5.5rem + 5%);
         font-size: 50px;
         font-weight: 500px;
         color: #fff;
-        cursor: pointer;
-
+        cursor: default;
         display: block;
         text-align: center;
 
         outline: none;
         position: relative; 
+        background: rgba(0, 0, 0, 0.5);
+        display: inline-flex;
     }
 
 
@@ -393,11 +423,6 @@ li {
         }
     }
 
-
-    .texto-estilizacao :hover {
-        color: #6F85ED;
-        transition: 0.2s linear;
-    }
 
     .footer {
         font-size: 22px;
@@ -568,25 +593,20 @@ li {
         border-radius: 10px;
     }
 
-    @keyframes glowing {
-        0% { background-position: 0 0; }
-        50% { background-position: 400% 0; }
-        100% { background-position: 0 0; }
-    }
-
-
     .texto-estilizacao {
-        margin-top: 18rem;
+        margin-top: 22rem;
+        margin-left: calc(15.5rem + 2%);
         font-size: 50px;
         font-weight: 500px;
         color: #fff;
-        cursor: pointer;
-
+        cursor: default;
         display: block;
         text-align: center;
 
         outline: none;
         position: relative; 
+        background: rgba(0, 0, 0, 0.3);
+        display: inline-flex;
     }
 
 
@@ -617,11 +637,6 @@ li {
         }
     }
 
-
-    .texto-estilizacao :hover {
-        color: #6F85ED;
-        transition: 0.2s linear;
-    }
 
     .footer {
         font-size: 28px;
@@ -801,19 +816,20 @@ li {
 
 
     .texto-estilizacao {
-        margin-top: 18rem;
+        margin-top: 22rem;
+        margin-left: calc(236rem - 10%);
         font-size: 50px;
         font-weight: 500px;
         color: #fff;
-        cursor: pointer;
-
+        cursor: default;
         display: block;
         text-align: center;
 
         outline: none;
         position: relative; 
+        background: rgba(0, 0, 0, 0.3);
+        display: inline-flex;
     }
-
 
     .texto-estilizacao::after {
         content: '';
@@ -840,12 +856,6 @@ li {
         height: 1500px;
         opacity: 0;
         }
-    }
-
-
-    .texto-estilizacao :hover {
-        color: #6F85ED;
-        transition: 0.2s linear;
     }
 
     .footer {

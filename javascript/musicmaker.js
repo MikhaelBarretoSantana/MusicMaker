@@ -82,6 +82,8 @@ function esconder(){
 }
 
 var ativacaoDeTeclas = false;
+var styleElem = document.createElement("style");
+
 
 document.onkeydown = function(event) {
     var key_press = String.fromCharCode(event.keyCode);
@@ -91,6 +93,7 @@ document.onkeydown = function(event) {
     }
     else if (key_press == "S" && ativacaoDeTeclas == true) {
         botao2();
+        
     } 
     else if (key_press == "D" && ativacaoDeTeclas == true) {
         botao3();
@@ -108,61 +111,75 @@ document.onkeydown = function(event) {
         stopVideo();
     }
     };
-    /*let c = 0;*/
-
-function botao1() {        
-    var styleElem = document.createElement("style");
-    styleElem.id = "efeitobotao1"
-    styleElem.innerHTML = "#dj-space-botoes::after {content: ''; width: 40px; height: 40px; border-radius: 100%; border: 5px solid #c51350; position: absolute; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: ring 1s infinite;"
-    document.head.appendChild(styleElem);
-    var elemento = document.getElementById('efeitobotao1')
-
     const sleep = (duration) => {
         return new Promise(resolve => setTimeout(resolve, duration));
     }
 
+function botao1() {    
+    styleElem.id = "efeitobotao"
+    styleElem.innerHTML = "#dj-space-botoes::after {content: ''; width: 40px; height: 40px; border-radius: 100%; border: 5px solid #c51350; position: absolute; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: ring 1s infinite} .botao-1{background: linear-gradient(45deg, #fda403, #e8751a); transition: 0.3s linear; box-shadow: 0px 0px 25px rgba(197,19,80,25)}";
+    document.head.appendChild(styleElem);
+    var elemento = document.getElementById('efeitobotao')
+
     sleep(450).then(() => {
         while (elemento.firstChild) {
             elemento.removeChild(elemento.firstChild);
-            elemento.remove();
         }
     })  
 
     const audio1 = new Audio("/ES_Bass Drop - SFX Producer.mp3");
     audio1.play();
     }
-
+    
 function botao2() {
-    /*var styleElem2 = document.createElement("style");
-    styleElem2.id = "efeitobotao2";
-    styleElem2.innerHTML = '#botao-2: {box-shadow: 0px 0px 10px rgba(213,91,62,25);}';
-    console.log(styleElem2)
-    console.log(styleElem2.id)
-    document.head.appendChild(styleElem2);
-    var elemento2 = document.getElementById('efeitobotao2');
+    styleElem.id = "efeitobotao";
+    styleElem.innerHTML = ".botao-2 {background: linear-gradient(45deg, #d55b3e, #fcf4d9); box-shadow: 0px 0px 25px rgba(0,170,160,25); animation: piscar 0.5ms;}";
+    
+    document.head.appendChild(styleElem);
+    var elemento = document.getElementById('efeitobotao');
 
-    const sleep = (duration) => {
-        return new Promise(resolve => setTimeout(resolve, duration));
-    }
-
-    sleep(1050).then(() => {
-        while (elemento2.firstChild) {
-            elemento2.removeChild(elemento2.firstChild);
-            elemento2.remove();
+    sleep(250).then(() => {
+        while (elemento.firstChild) {
+            elemento.removeChild(elemento.firstChild);
         }
-    })*/
+    })
 
     const audio2 = new Audio("/ES_Drum Hit High Hat 1 - SFX Producer.mp3")
     audio2.play()
 }
 
 function botao3() {
+    styleElem.id = "efeitobotao";
+    styleElem.innerHTML = ".botao-3 {background: rgba(255,255,255, 1); box-shadow: 0px 0px 25px rgba(0,0,0,25); animation: fade 0.5s; transition: 0.1s linear}";
+    
+    document.head.appendChild(styleElem);
+    var elemento = document.getElementById('efeitobotao');
+    
+    sleep(250).then(() => {
+        while (elemento.firstChild) {
+            elemento.removeChild(elemento.firstChild);
+        }
+    })
+
     const audio3 = new Audio("/ES_PREL Hit Digital 18 - SFX Producer.mp3")
 
     audio3.play()
 }
 
 function botao4() {
+
+    styleElem.id = "efeitobotao";
+    styleElem.innerHTML = ".botao-4 {background-image: url(/img/palmas.png); background-size: 106%; box-shadow: 0px 0px 25px rgba(125,216,125,25)} #dj-space-botoes::after {content: ''; width: 40px; height: 40px; border-radius: 100%; border: 8px solid #facf5a; position: absolute; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: ring 0.5s infinite}";
+    
+    document.head.appendChild(styleElem);
+    var elemento = document.getElementById('efeitobotao');
+
+    sleep(280).then(() => {
+        while (elemento.firstChild) {
+            elemento.removeChild(elemento.firstChild);
+        }
+    })
+
     const audio4 = new Audio("/ES_Hand Clap Indoors 3 - SFX Producer.mp3")
 
     audio4.play()
