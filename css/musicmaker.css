@@ -56,6 +56,8 @@ body {
     transition: 0.2s linear;
     border-radius: 10px;
 
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    
     color: #000;
 }
 
@@ -74,7 +76,6 @@ body {
     background: #000;
     padding: 30px;
     box-shadow: 0px 0px 10px rgba(62,0,64,25);
-    
 }
 .wrapper .input-url{
     height: 40px;
@@ -140,7 +141,6 @@ body {
     position: relative;
     z-index: 0;
     border-radius: 10px;
-
     text-align: center;
 }
 
@@ -159,6 +159,7 @@ body {
     opacity: 0;
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
+
 }
 
 .glow-on-hover:active {
@@ -167,6 +168,7 @@ body {
 
 .glow-on-hover:active:after {
     background: transparent;
+    
 }
 
 .glow-on-hover:hover:before {
@@ -183,6 +185,7 @@ body {
     left: 0;
     top: 0;
     border-radius: 10px;
+    
 }
 
 @keyframes ring {
@@ -290,13 +293,6 @@ body {
     font-size: 40px;
 }
 
-.botao-1:hover {
-    background: linear-gradient(45deg, #fda403, #e8751a);
-    transition: 0.3s linear;
-    box-shadow: 0px 0px 25px rgba(197,19,80,25);
-    animation: piscar 0.5s;
-}
-
 .botao-2 {
     padding: 50px;
     margin-right: 15px;
@@ -306,13 +302,6 @@ body {
     border-radius: 5px;
     background: linear-gradient(45deg, #00aaa0, #8ed2c9);
     border: inherit;
-}
-
-.botao-2:hover {
-    background: linear-gradient(45deg, #d55b3e, #fcf4d9);
-    box-shadow: 0px 0px 25px rgba(0,170,160,25);
-    animation: piscar 0.5s;
-    transition: 0.1s linear;
 }
 
 @keyframes piscar {
@@ -335,14 +324,6 @@ body {
     border: inherit;
 }
 
-.botao-3:hover {
-    background: linear-gradient(45deg, #82acff, #8bffff);
-    transition: 0.3s linear;
-    box-shadow: 0px 0px 25px rgba(143,113,255,25);
-    animation: piscar 0.5s ;
-    transition: 0.1s linear;
-}
-
 .botao-4 {
     padding: 49px;
     margin-right: 15px;
@@ -354,13 +335,6 @@ body {
     border: inherit;
 }
 
-.botao-4:hover {
-    background: linear-gradient(45deg, #5b446a, #906387);
-    transition: 0.3s linear;
-    
-    box-shadow: 0px 0px 25px rgba(125,216,125,25);
-    animation: piscar 0.5s ;
-}
 
 @media screen and (max-width: 599px) {    
     .bg_video{
@@ -1112,6 +1086,11 @@ body {
         100% { background-position: 0 0; }
     }
 
+    @keyframes fade {
+        0% { box-shadow: inset}
+        100% { box-shadow: 0px 0px 25px rgba(255,255,255,25);}
+    }
+
     .dj-space-botoes{
         display: inline-block;
         margin-left: calc(45% - 5rem);
@@ -1176,6 +1155,7 @@ body {
         border-radius: 5px;
         background: linear-gradient(45deg, #8f71ff, #ff5d9e);
         border: inherit;
+        transition: 1s linear;
     }
 
     .botao-3:hover {
