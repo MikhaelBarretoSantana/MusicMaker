@@ -188,34 +188,36 @@ function botao4() {
 var info = true;
 
 function botaoClose() {
-    if (info == false){
+    if (info == true){
         var tag = document.getElementById('informacao');
     
         var url = document.getElementById('espaco-linkagem')
     
         var start = document.getElementById('botao-start')
-    
-        start.hidden = false;
-        url.hidden = false;
+        
+        if (ativacaoDeTeclas == false){
+            start.hidden = false;
+            url.hidden = false;
+        }
         tag.hidden = true;
-        info = true;
+        info = false;
     } else {
         console.log("A janela de informação já está fechada")
     }
 }
 
 function botaoInfo() {
-    if (info == true) {
+    if (info == false) {
         var tag = document.getElementById('informacao');
     
         var url = document.getElementById('espaco-linkagem')
     
         var start = document.getElementById('botao-start')
-    
-        start.hidden = true;
-        url.hidden = true;
-        tag.hidden = false;
-        info = false;
+            start.hidden = true;
+            url.hidden = true;
+            tag.hidden = false;
+            info = true;
+
     } else {
         console.log("A Janela de informação já está aberta")
     }
