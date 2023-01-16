@@ -136,7 +136,6 @@ body {
 }
 
 .texto-funcionalidade {
-    
     font-size: 18px;
 
     text-align: center;
@@ -198,6 +197,7 @@ body {
 }
 
 .botao-info {
+    box-shadow: inset 0px 0px 25px rgba(75, 75, 75, 0.5);
     display: inline-flex;
     margin-left: 1150px;
     border:  none;
