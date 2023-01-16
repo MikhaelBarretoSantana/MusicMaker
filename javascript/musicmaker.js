@@ -6,19 +6,18 @@ function convertUrlToString(url) {
 
 function linkarUrl() {
         urlVideo = document.getElementById('url').value;
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var player;
         if (urlVideo.length == 0) {
             alert("Campo Vazio");
-        } else {
-            esconder();
-            ativacaoDeTeclas = true;
-            onYouTubeIframeAPIReady(urlVideo)
-            onPlayerReady()
+            } else {
+                var tag = document.createElement('script');
+                tag.src = "https://www.youtube.com/iframe_api";
+                var firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                var player;
+                esconder();
+                ativacaoDeTeclas = true;
+                onYouTubeIframeAPIReady(urlVideo)
+                onPlayerReady()
         }
 }
 
@@ -29,13 +28,25 @@ function onYouTubeIframeAPIReady() {
         videoId: convertUrlToString(urlVideo),
         events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            'onStateChange': onPlayerStateChange,
         }
     });
 }
 
 function onPlayerReady(event) {
-    event.target.playVideo();
+    if (player.getPlayerState() == -1) {
+        player.destroy()
+        alert("O Video Escolhido Não está disponivel Devido A Direitos Autorais!")
+        ativacaoDeTeclas = false
+        const startbotao = document.getElementById('botao-start');
+        startbotao.hidden = false;
+        const botoes = document.getElementById('dj-space-botoes')
+        botoes.hidden = true;
+        const urlLink = document.getElementById('espaco-linkagem');
+        urlLink.hidden = false;
+    } else {
+        event.target.playVideo();
+    }
 }
 
     var done = false;
@@ -83,7 +94,6 @@ function esconder(){
 
 var ativacaoDeTeclas = false;
 var styleElem = document.createElement("style");
-
 
 document.onkeydown = function(event) {
     var key_press = String.fromCharCode(event.keyCode);
