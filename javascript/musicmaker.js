@@ -6,6 +6,7 @@ function convertUrlToString(url) {
 
 function linkarUrl() {
         urlVideo = document.getElementById('url').value;
+        var valor = urlVideo;
         if (urlVideo.length == 0) {
             alert("Campo Vazio");
             } else {
