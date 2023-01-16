@@ -16,9 +16,10 @@
             </div>
             <div class="divisoria-titulo">
                 <h1 class="titulo"><a class="titulo-link" href="/html/main.html"> Music Maker </a></h1>
+                <button type="button" class="botao-info" onclick="botaoInfo()"> <img src="/img/info.png"></button>
             </div>
         
-            <div id="espaco-linkagem" class="wrapper">
+            <div id="espaco-linkagem" class="wrapper" hidden>
                 <div class="input-url">
                     <input id="url" type="text" class="input-v" required>
                     <div class="underline"></div>
@@ -26,12 +27,25 @@
                 </div>
             </div>
             
-            <div id="espaco-linkagem">
+            <div id="espaco-linkagem" >
                 <div class="espaco-botao">
-                    <button id="botao-start" class="glow-on-hover" onclick="linkarUrl()" type="submit"> Start! </button>
+                    <button id="botao-start" class="glow-on-hover" onclick="linkarUrl()" type="submit" hidden> Start! </button>
                 </div>
         </header>
         <main>
+            <div class="box-funcionalidade" id="informacao">
+                <h1 class="cabecario-funcionalidade"> Como Funciona a aplicação ? </h1>
+                <button type="button" class="botao-fechar" onclick="botaoClose()"> X </button>
+
+                <ol id="informacao">
+                    <li class="texto-funcionalidade"> O primeiro passo é pegar o URL de qualquer video no Youtube. Para Conseguir obter o URL de um video basta clicar com o botão direito sobre o video no youtube. </li>
+                    <img class="divisao-imagem-funcionalidades-url" src="/img/URL-youtube.png" title="Exemplo De Como Pegar URL Dos Videos Do Youtube" alt="Exemplo De Como Pegar URL Dos Videos Do Youtube">
+                    <li class="texto-funcionalidade-2"> Em seguida ao ter o codigo URL em mãos é necessario apenas que copie o mesmo na caixa de entrada da aplicação:  </li>
+                    <img class="divisao-imagem-funcionalidades-url_input" src="/img/input-url.png" title="Demonstração de onde por o codigo URL pego do Youtube" alt="Demonstração de onde por o codigo URL pego do Youtube">
+                    <li class="texto-funcionalidade-3"> Por fim basta clicar no Botão "Start!" e começar a REMIXAR!</li>
+                    <button type="button" class="botao-close-final" onclick="botaoClose()"> COMEÇAR! </button>
+                </ol>
+            </div>
             <div class="player" id="player"> </div>
 
                 <div id="dj-space-botoes" class="dj-space" hidden>
