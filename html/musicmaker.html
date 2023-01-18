@@ -14,26 +14,13 @@
                     <source src="/video/d5a4b96f-01b4-4519-8470-62484e0b1b5b.mp4" type="video/mp4">
                 </video>
             </div>
+
             <div class="divisoria-titulo">
                 <h1 class="titulo"><a class="titulo-link" href="/html/main.html"> Music Maker </a></h1>
                 <button type="button" class="botao-info" onclick="botaoInfo()"> <img src="/img/info.png"></button>
             </div>
-        
-            <div id="espaco-linkagem" class="wrapper" hidden>
-                <div class="input-url">
-                    <input id="url" type="text" class="input-v" required>
-                    <div class="underline"></div>
-                    <label> URL</label>
-                </div>
-            </div>
-            
-            <div id="espaco-linkagem" >
-                <div class="espaco-botao">
-                    <button id="botao-start" class="glow-on-hover" onclick="linkarUrl()" type="submit" hidden> Start! </button>
-                </div>
-        </header>
-        <main>
-            <div class="box-funcionalidade" id="informacao">
+
+            <div class="box-funcionalidade" id="informacao" hidden>
                 <h1 class="cabecario-funcionalidade"> Como Funciona a aplicação ? </h1>
                 <button type="button" class="botao-fechar" onclick="botaoClose()"> X </button>
 
@@ -46,19 +33,71 @@
                     <button type="button" class="botao-close-final" onclick="botaoClose()"> COMEÇAR! </button>
                 </ol>
             </div>
-            <div class="player" id="player"> </div>
 
+        </header>
+        <main>
                 <div id="dj-space-botoes" class="dj-space" hidden>
-                    <div class="botoes-de-midia">
-                        <button class="botao-pause" id="botao-pause"  type="button" onclick="pauseVideo()"> <img class="botao-pause-imagem" src="/img/video_play_pause_filled_icon_201679.ico"></img> </button>
-                        <button class="botao-stop" id="botao-stop" type="button" onclick="stopVideo()"> <img src="/img/1486348535-music-square-stop-play-pause_80450.png"> </img> </button>
+                    <div class="linkagem">
+                        <div class="espaco-midia-player">
+                            <div class="player" id="player"> </div>
+                            <div class="botoes-de-midia">
+                                <button class="botao-pause" id="botao-pause"  type="button" onclick="pauseVideo()"> <img class="botao-pause-imagem" src="/img/video_play_pause_filled_icon_201679.ico"></img> </button>
+                                <button class="botao-stop" id="botao-stop" type="button" onclick="stopVideo()"> <img src="/img/1486348535-music-square-stop-play-pause_80450.png"> </img> </button>
+                                <div class="dj-space-botoes">
+                                    <button id="botao-1" class="botao-1" type="button" onclick="botao1()"> <a class="letra-botao1"> A </a></button>
+                                    <button class="botao-2" type="button" onclick="botao2()"> <a class="letra-botao2"> S </a></button>
+                                    <button class="botao-3" type="button" onclick="botao3()"> <a class="letra-botao3"> D </a></button>
+                                    <button class="botao-4" type="button" onclick="botao4()"> <a class="letra-botao4"> W </a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="espaco-midia-player2">
+                            <div class="player2" id="player2"> </div>
+                            <div id="botoes-de-midia-2" class="espaco-botoes-midia2" >
+                                <div class="botoes-de-midia-2">
+                                    <button class="botao-pause2" id="botao-pause2"  type="button" onclick="pauseVideo2()" hidden> <img class="botao-pause-imagem" src="/img/video_play_pause_filled_icon_201679.ico"></img> </button>
+                                    <button class="botao-stop2" id="botao-stop2" type="button" onclick="stopVideo2()" hidden> <img src="/img/1486348535-music-square-stop-play-pause_80450.png"> </img> </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="dj-space-botoes">
-                        <button id="botao-1" class="botao-1" type="button" onclick="botao1()"> <a class="letra-botao1"> A </a></button>
-                        <button class="botao-2" type="button" onclick="botao2()"> <a class="letra-botao2"> S </a></button>
-                        <button class="botao-3" type="button" onclick="botao3()"> <a class="letra-botao3"> D </a></button>
-                        <button class="botao-4" type="button" onclick="botao4()"> <a class="letra-botao4"> W </a></button>
+                
                 </div>
+                
+                <div>
+
+                    
+                </div>
+            <div class="teste" id="teste1" >
+                <div id="espaco-linkagem1" class="wrapper">
+                    <div class="input-url">
+                        <input id="url" type="text" class="input-v" required>
+                        <div class="underline"></div>
+                        <label> URL</label>
+                    </div>
+                </div>
+                <div class="espaco-linkagem-botao1" id="espaco-linkagem-botao1" >
+                    <div class="espaco-botao" id="espaco-botao" >
+                        <button id="botao-start" class="glow-on-hover" onclick="linkarUrl1()" type="submit" > Start! </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="teste">
+                <div id="espaco-linkagem2" class="wrapper2" hidden>
+                    <div class="input-url2">
+                        <input id="url2" type="text" class="input-v2" required>
+                        <div class="underline2"></div>
+                        <label> URL</label>
+                    </div>
+                </div>
+                <div class="espaco-linkagem-botao2">
+                    <div class="espaco-botao2">
+                        <button id="botao-start2" class="glow-on-hover2" onclick="linkarUrl2()" type="submit" hidden> Start! </button>
+                    </div>
+                </div>
+            </div>
+
         </main>
         <footer>
         </footer>
